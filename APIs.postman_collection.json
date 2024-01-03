@@ -1,0 +1,578 @@
+{
+	"info": {
+		"_postman_id": "35ce7913-e042-4aa6-a1d8-e398ac8ad0ae",
+		"name": "APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28631185",
+		"_collection_link": "https://saas-sw2.postman.co/workspace/Orders-and-notification-managem~9681c604-cb2c-4ac6-8430-e486e9ea5935/collection/28631185-35ce7913-e042-4aa6-a1d8-e398ac8ad0ae?action=share&source=collection_link&creator=28631185"
+	},
+	"item": [
+		{
+			"name": "CustomerController",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"name\":\"shahd\",\r\n    \"password\":\"12345678\",\r\n    \"email\":\"shahddosama734@gmail.com\",\r\n    \"address\":\"Giza/doki/s15/5\",\r\n    \"balance\":\"9050\",\r\n    \"language\":\"English\",\r\n    \"preferredChannel\":\"All\",\r\n    \"mobileNumber\":\"01223285258\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/customer/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"12345678\",\r\n    \"email\":\"shahddosama734@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/customer/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCustomers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/customer/AllCustomers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"AllCustomers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductController",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/product/AllProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								"AllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/product/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serialNumber\" : \"005\",\r\n    \"name\" : \"car\",\r\n    \"vendor\" : \"ahmed\",\r\n    \"category\" : \"motores\",\r\n    \"price\" : 7850\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/product/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by serial number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/product/show/001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								"show",
+								"001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderController",
+			"item": [
+				{
+					"name": "add simple order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"serialNumber\": \"001\", \r\n        \"amount\":1\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/order/add-simple-order?customerID=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"add-simple-order"
+							],
+							"query": [
+								{
+									"key": "customerID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add compound order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"products\":[\r\n            {\r\n                \"serialNumber\": \"004\",\r\n                \"amount\":1\r\n            }\r\n        ],\r\n        \"customer\":{\r\n            \"id\": 1\r\n        }\r\n    },\r\n    {\r\n        \"products\":[\r\n            {\r\n                \"serialNumber\": \"004\",\r\n                \"amount\":2\r\n            }\r\n        ],\r\n        \"customer\":{\r\n            \"id\": 2\r\n        }\r\n    },\r\n    {\r\n        \"products\":[\r\n            {\r\n                \"serialNumber\": \"004\",\r\n                \"amount\":2\r\n            }\r\n        ],\r\n        \"customer\":{\r\n            \"id\": 3\r\n        }\r\n    }\r\n\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/order/add-compound-order?customerID=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"add-compound-order"
+							],
+							"query": [
+								{
+									"key": "customerID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel simple order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/order/delete-simple-order?orderID=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"delete-simple-order"
+							],
+							"query": [
+								{
+									"key": "orderID",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel compound order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/order/delete-compound-order?orderID=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"delete-compound-order"
+							],
+							"query": [
+								{
+									"key": "orderID",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/order/get-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"get-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ShipmentController",
+			"item": [
+				{
+					"name": "place simple shipment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/Shipment/place/simple/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"Shipment",
+								"place",
+								"simple",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place compound shimpment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/Shipment/place/compound/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"Shipment",
+								"place",
+								"compound",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel simple shipment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/Shipment/cancel/simple/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"Shipment",
+								"cancel",
+								"simple",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel compound shipment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/Shipment/cancel/compound/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"Shipment",
+								"cancel",
+								"compound",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notificationController",
+			"item": [
+				{
+					"name": "get sms notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/notification/SMS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"notification",
+								"SMS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get email notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/notification/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"notification",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatisticsController",
+			"item": [
+				{
+					"name": "get notified email and most one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/stat/emails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"stat",
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get notified mobile number and most one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/stat/mobile-numbers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"stat",
+								"mobile-numbers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sent templates and most one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/stat/templates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"stat",
+								"templates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
